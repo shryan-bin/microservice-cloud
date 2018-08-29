@@ -1,0 +1,14 @@
+eureka:
+  client:
+    service-url:
+      defaultZone: http://user1:password123@localhost:8761/eureka
+  instance:
+    prefer-ip-address: true
+spring:
+  application:
+    name: microservice-user-customer-ribbon-property
+microservice-user-provider:
+  ribbon:
+    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
+server:
+  port: 8703

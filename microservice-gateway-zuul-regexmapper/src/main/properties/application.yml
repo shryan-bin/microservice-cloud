@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: microservice-gateway-zuul-regexmapper
+eureka:
+  client:
+    service-url:
+      defaultZone: http://user1:password123@localhost:8761/eureka
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.application.name}:${server.port}

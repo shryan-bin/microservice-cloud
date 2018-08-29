@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: microservice-gateway-zuul
+eureka:
+  client:
+    service-url:
+      defaultZone: http://user1:password123@localhost:8761/eureka
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.application.name}:${spring.application.instance_id}:${server.port}
+zuul:
+  routes:
+    microservice-user-provider: /alias/**
+
+
+zuul:
+  routes:
+    whatever:
+      path: /my-path/**
+      serviceId: microservice-user-provider
+
+
+zuul:
+  routes:
+    whatever:
+      path: /my-url/**
+      url: http://localhost:8700

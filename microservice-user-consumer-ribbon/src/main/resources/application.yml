@@ -1,0 +1,11 @@
+server:
+  port: 8702
+spring:
+  application:
+    name: microservice-user-consumer-ribbon
+eureka:
+  client:
+    service-url:
+      defaultZone: http://user1:password123@localhost:8761/eureka
+  instance:
+    prefer-ip-address: true

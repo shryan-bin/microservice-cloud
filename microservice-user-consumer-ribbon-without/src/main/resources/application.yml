@@ -1,0 +1,20 @@
+microservice-user-provider:
+  ribbon:
+    listOfServers: localhost:8700
+ribbon:
+  eureka:
+    enabled: false
+eureka:
+  client:
+    healthcheck: true
+    service-url:
+      defualtZone: http://user1:password123@localhost:8761/eureka
+    fetch-registry: false
+    register-with-eureka: false
+  instance:
+    prefer-ip-address: true
+server:
+  port: 8704
+spring:
+  application:
+    name: microservice-user-consumer-ribbon-without

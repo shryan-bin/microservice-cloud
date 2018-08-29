@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: microservice-consumer-movie-feign-cust
+eureka:
+  client:
+    service-url:
+      defaultZone: http://user1:password123@localhost:8761/eureka
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${server.port}}
+    metadata-map:
+
+server:
+  port: 8711
+logging:
+  level:
+    com.ryan.cloud.feign.EurekaFeignClient: DEBUG

@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: microservice-gateway-zuul
+zuul:
+  routes:
+    whatever:
+      path: /my-url/**
+      url: http://localhost:8700
